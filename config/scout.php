@@ -191,6 +191,14 @@ return [
                             'type' => 'string',
                         ],
                         [
+                            'name' => 'user',
+                            'type' => 'string',
+                        ],
+                        [
+                            'name' => 'category',
+                            'type' => 'string',
+                        ],
+                        [
                             'name' => 'description',
                             'type' => 'string',
                         ],
@@ -214,11 +222,15 @@ return [
                             'name' => 'created_at',
                             'type' => 'int64',
                         ],
+                        [
+                            'name' => 'views_count',
+                            'type' => 'int32',
+                        ],
                     ],
                     'default_sorting_field' => 'created_at',
                 ],
                 'search-parameters' => [
-                    'query_by' => 'title, description'
+                    'query_by' => 'title, description, user, category'
                 ],
             ],
         ],

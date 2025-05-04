@@ -85,6 +85,8 @@ class AdResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('user.name')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('views_count')->counts('views')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
                     ->color(fn($state): string => match ($state) {

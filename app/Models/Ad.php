@@ -49,9 +49,14 @@ class Ad extends Model
 
     public function toSearchableArray(): array
     {
+        $this->loadCount('views');
+        $this->load(['user','category']);
         return array_merge($this->toArray(), [
             "id" => (string) $this->id,
             "created_at" => $this->created_at->timestamp,
+            "views_count" => $this->views_count,
+            "user" => $this->user->name,
+            "category" => $this->category->name
         ]);
     }
 }

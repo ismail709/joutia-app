@@ -80,4 +80,8 @@ class User extends Authenticatable implements FilamentUser
     public function role(){
         return $this->belongsTo(Role::class);
     }
+
+    public function views(){
+        return $this->hasMany(AdView::class);
+    }
 }
