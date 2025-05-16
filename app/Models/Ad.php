@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\AdStatusEnum;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -26,6 +27,21 @@ class Ad extends Model
     protected $casts = [
         'status' => AdStatusEnum::class,
     ];
+
+    protected function scopeApproved(Builder $query)
+    {
+        return $query->where('status',AdStatusEnum::APPROVED->value);
+    }
+
+    protected function scopePending(Builder $query)
+    {
+        return $query->where('status',AdStatusEnum::PENDING->value);
+    }
+
+    protected function scopeRefused(Builder $query)
+    {
+        return $query->where('status',AdStatusEnum::REFUSED->value);
+    }
 
     public function user()
     {

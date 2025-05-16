@@ -27,7 +27,9 @@ class AdRequest extends FormRequest
             'price' => 'nullable|integer|min:0|max:999999999',
             'city' => 'required|string|max:255',
             'address' => 'required|string|max:255',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id',
+            'images' => 'required|array|max:3',
+            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
         ];
     }
 }

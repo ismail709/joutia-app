@@ -1,0 +1,16 @@
+{
+    "name": "Joutia",
+    "short_name": "Joutia",
+    "background_color": "#fff",
+    "display": "fullscreen",
+    "description": "Joutia is a platform to buy and sell goods.",
+    "theme_color": "#006BFF",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

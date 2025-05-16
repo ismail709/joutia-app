@@ -19,7 +19,7 @@ class AdFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'description' => fake()->paragraph(),
+            'description' => fake()->paragraphs(5,true),
             'price' => fake()->numberBetween(100,100000),
             'city' => fake()->city(),
             'address' => fake()->streetAddress(),

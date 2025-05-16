@@ -16,6 +16,10 @@ class Category extends Model
         return $this->hasMany(Ad::class);
     }
 
+    public function subAds(){
+        return $this->hasManyThrough(Ad::class,Category::class,'parent_id','category_id');
+    }
+
     public function parentCategory(){
         return $this->belongsTo(Category::class,'parent_id');
     }

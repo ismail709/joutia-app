@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         $userRole = Role::where('name', RoleEnum::USER->value)->first();
 
         if ($userRole) {
-            User::factory(10)->create([
+            User::factory(10000)->create([
                 'role_id' => $userRole->id
             ]);
         }else {
